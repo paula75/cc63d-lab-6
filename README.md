@@ -47,6 +47,7 @@ docker build -t incidentes .
 docker run -p 8000:8000 incidentes
 ```
 
+
 Abre <http://localhost:8000> en el navegador.
 
 ### Con Python
