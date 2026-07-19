@@ -8,6 +8,6 @@ steps:
 # Deploy image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'incidentes-ci', '--image', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/v1.0.0', '--region', 'southamerica-west1', '--port', '8000']
+  args: ['run', 'deploy', 'incidentes-ci', '--image', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/v1.0.0', '--region', 'southamerica-west1']
 images:
 - 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/v1.0.0'
