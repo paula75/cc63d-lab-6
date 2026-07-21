@@ -35,8 +35,10 @@ resource "google_cloud_run_v2_service" "incidentes" {
 
 # 3. Trigger de Cloud Build conectado a GitHub
 resource "google_cloudbuild_trigger" "incidentes_trigger" {
-  name     = "rmgpgab-cloudbuild-incidentes-southamerica-west1-paula75-cc6uqe"
-  location = "southamerica-west1"
+  name               = "rmgpgab-cloudbuild-incidentes-southamerica-west1-paula75-cc6uqe"
+  location           = "southamerica-west1"
+  service_account    = "projects/seminario-gestion-incidentes/serviceAccounts/770400707140-compute@developer.gserviceaccount.com"
+  include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
 
   github {
     owner = "paula75"
@@ -46,5 +48,6 @@ resource "google_cloudbuild_trigger" "incidentes_trigger" {
     }
   }
 
-  filename = "cloudbuild.yaml" # Lee tu archivo cloudbuild.yaml de tu repositorio
+  filename = "cloudbuild.yaml"
 }
+
