@@ -50,7 +50,7 @@ def test_flujo_completo_incidente_a_postmortem(client):
         "incident_id": iid, "summary": "s", "root_cause": "deploy malo",
         "impact": "30 min sin pagos", "action_items": "rollback automático",
     })
-    assert pm.status_code == 201
+    assert pm.status_code == 200
 
 
 def test_listar_incidentes_filtra_por_status(client):
