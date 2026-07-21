@@ -15,3 +15,6 @@ steps:
   args: ['run', 'deploy', 'incidentes-ci', '--image', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/$COMMIT_SHA', '--region', 'southamerica-west1', '--allow-unauthenticated']
 images:
 - 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
