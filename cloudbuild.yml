@@ -2,6 +2,10 @@ steps:
 # Build the image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/$COMMIT_SHA', '.']
+# Run tests
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'docker'
+  args: ['run', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/$COMMIT_SHA', 'pytest']
 # Push the image to Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'southamerica-west1-docker.pkg.dev/seminario-gestion-incidentes/incidentes/$COMMIT_SHA']
